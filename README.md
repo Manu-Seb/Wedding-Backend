@@ -36,7 +36,7 @@ A multi-tenant wedding planner backend built with Node.js, Express.js, and Mongo
 
 The server will start on `http://localhost:5000` by default.
 
-## 🔗 API Endpoints
+##  API Endpoints
 
 ### Organization Management
 
@@ -111,7 +111,7 @@ curl -X GET http://localhost:5000/org/get/my-organization \
   -H "x-auth-token: your-jwt-token-here"
 ```
 
-## 🧪 Testing
+##  Testing
 
 A comprehensive test script is provided (`test_apis.sh`) that tests all API endpoints:
 
