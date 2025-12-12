@@ -2,28 +2,6 @@
 
 A multi-tenant wedding planner backend built with Node.js, Express.js, and MongoDB. This API provides organization management and admin authentication for wedding planning services.
 
-## 🚀 Features
-
-- **Multi-tenant Architecture**: Support for multiple wedding organizations
-- **Admin Authentication**: Secure JWT-based authentication system
-- **Organization Management**: Full CRUD operations for wedding organizations
-- **Password Security**: Bcrypt hashing for secure password storage
-- **Comprehensive Logging**: Detailed logging for debugging and monitoring
-- **CORS Enabled**: Cross-origin resource sharing configured
-- **Input Validation**: Request validation and sanitization
-
-## 🛠️ Tech Stack
-
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB with Mongoose ODM
-- **Authentication**: JSON Web Tokens (JWT)
-- **Password Hashing**: Bcryptjs
-- **Validation**: Express Validator
-- **Development**: Nodemon for auto-restart
-
-## 📦 Installation
-
 1. **Clone the repository**
 
    ```bash
@@ -43,8 +21,7 @@ A multi-tenant wedding planner backend built with Node.js, Express.js, and Mongo
 
    ```env
    PORT=5000
-   MONGO_URI=mongodb+srv://weddinguser:weddingpassword@cluster0.dqki4fc.mongodb.net/?appName=Cluster0
-   JWT_SECRET=supersecretjwttoken
+   MONGO_URI=<Mongodb url>
    ```
 
 4. **Start the server**
@@ -120,31 +97,6 @@ curl -X GET http://localhost:5000/admin \
   -H "x-auth-token: YOUR_JWT_TOKEN_HERE"
 ```
 
-## 🏗️ Project Structure
-
-```
-Wedding-backend/
-├── app.js                 # Main application entry point
-├── package.json           # Project dependencies and scripts
-├── .env                   # Environment variables
-├── test_apis.sh          # API testing script
-├── controllers/           # Business logic controllers
-│   ├── authController.js  # Authentication controller
-│   └── orgController.js   # Organization controller
-├── models/               # Database models
-│   ├── Admin.js          # Admin user model
-│   └── Organization.js   # Organization model
-├── routes/               # API route definitions
-│   ├── authRoutes.js     # Authentication routes
-│   └── orgRoutes.js      # Organization routes
-├── middleware/           # Custom middleware
-│   └── auth.js           # JWT authentication middleware
-└── utils/               # Utility functions
-    └── db.js             # Database connection utility
-```
-
-## 🔒 Authentication
-
 The API uses JWT (JSON Web Tokens) for authentication:
 
 1. **Login**: Send credentials to `/admin/login` to receive a JWT token
@@ -179,36 +131,13 @@ The script tests:
 4. Organization update
 5. Organization deletion
 
-## 🔍 Logging
-
-The application includes comprehensive logging for debugging and monitoring:
-
-- **Request Logging**: All incoming requests are logged with timestamps
-- **Response Logging**: All responses are logged with status codes
-- **Error Logging**: Detailed error messages and stack traces
-- **Authentication Logging**: Authentication attempts and token validation
-
-Logs are formatted with timestamps and component identifiers (e.g., `[ORG]`, `[AUTH]`, `[APP]`).
-
-## 🔧 Environment Variables
-
 | Variable     | Description                      | Default  |
 | ------------ | -------------------------------- | -------- |
 | `PORT`       | Server port number               | 5000     |
 | `MONGO_URI`  | MongoDB connection string        | Required |
 | `JWT_SECRET` | Secret key for JWT token signing | Required |
 
-## 🚨 Error Handling
-
-The API includes proper error handling for:
-
-- **Validation Errors**: Input validation and sanitization
-- **Authentication Errors**: Invalid or missing tokens
-- **Authorization Errors**: Insufficient permissions
-- **Database Errors**: Connection and query errors
-- **Server Errors**: General application errors
-
-## 📊 Database Schema
+## Database Schema
 
 ### Organization Model
 
@@ -229,36 +158,3 @@ The API includes proper error handling for:
   role: String (default: "admin")
 }
 ```
-
-## 🔒 Security Features
-
-- **Password Hashing**: All passwords are hashed using bcryptjs
-- **JWT Tokens**: Secure token-based authentication
-- **Input Validation**: Request data validation and sanitization
-- **CORS Configuration**: Properly configured cross-origin policies
-- **Authorization Checks**: Users can only access their own organizations
-
-## 📈 Monitoring
-
-The application provides detailed logging for monitoring:
-
-- All API requests and responses are logged
-- Database operations include timing information
-- Authentication attempts are tracked
-- Error conditions are logged with full stack traces
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the ISC License.
-
----
-
-**Note**: This is a backend API designed for wedding planning applications. Ensure proper security measures are in place before deploying to production.
